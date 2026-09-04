@@ -1,0 +1,73 @@
+using System;
+
+namespace CybersecurityAwarenessBot
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ChatBot bot = new ChatBot();
+            bot.StartChat();
+
+            Console.ReadKey();
+        }
+    }
+}
+Audio
+CybersecurityAwarenessBot
+│
+├── Audio
+│   └── greeting.wav
+│
+├── ChatBot.cs
+└── Program.cs
+greeting.wav
+Build Action: Content
+Copy to Output Directory: Copy if newer
+
+using System;
+using System.Media;
+
+namespace CybersecurityAwarenessBot
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            PlayGreeting();
+
+            ChatBot bot = new ChatBot();
+            bot.StartChat();
+
+            Console.ReadKey();
+        }
+
+        static void PlayGreeting()
+        {
+            try
+            {
+                string audioPath = "Audio/greeting.wav";
+
+                using (SoundPlayer player = new SoundPlayer(audioPath))
+                {
+                    player.PlaySync();
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Voice greeting could not be played.");
+            }
+        }
+    }
+}
+using System.Media;
+string audioPath = "Audio/greeting.wav";
+player.PlaySync();
+CybersecurityAwarenessBot
+│
+├── Audio
+│   └── greeting.wav
+│
+├── ChatBot.cs
+│
+└── Program.cs
