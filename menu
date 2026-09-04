@@ -1,0 +1,249 @@
+private void ShowMenu()
+{
+    Console.WriteLine("\n========== MENU ==========");
+    Console.WriteLine("1. Password safety");
+    Console.WriteLine("2. Phishing");
+    Console.WriteLine("3. Safe browsing");
+    Console.WriteLine("4. Exit");
+    Console.WriteLine("==========================");
+}
+Console.ForegroundColor = ConsoleColor.Yellow;
+ShowMenu();
+========== MENU ==========
+1. Password safety
+2. Phishing
+3. Safe browsing
+4. Exit
+==========================
+if (string.IsNullOrWhiteSpace(userInput))
+UserName = Console.ReadLine();
+UserName = UserName.Trim();
+Bheki
+public string UserName { get; set; }
+
+public string CybersecurityTip { get; set; }
+CybersecurityTip = "Think before you click.";
+Console.WriteLine($"\nTip of the day: {CybersecurityTip}");
+using System;
+using System.Media;
+
+namespace CybersecurityAwarenessBot
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            PlayGreeting();
+
+            ChatBot bot = new ChatBot();
+            bot.StartChat();
+
+            Console.WriteLine("\nPress any key to close the application.");
+            Console.ReadKey();
+        }
+
+        static void PlayGreeting()
+        {
+            try
+            {
+                string audioPath = "Audio/greeting.wav";
+
+                using (SoundPlayer player = new SoundPlayer(audioPath))
+                {
+                    player.PlaySync();
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Voice greeting could not be played.");
+            }
+        }
+    }
+}
+using System;
+
+namespace CybersecurityAwarenessBot
+{
+    public class ChatBot
+    {
+        public string UserName { get; set; }
+
+        public string CybersecurityTip { get; set; }
+
+        public void StartChat()
+        {
+            Console.Title = "Cybersecurity Awareness Bot";
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
+            Console.WriteLine("=======================================");
+            Console.WriteLine("     CYBERSECURITY AWARENESS BOT");
+            Console.WriteLine("=======================================");
+
+            Console.WriteLine(@"
+       __________________
+      |                  |
+      |      LOCK        |
+      |       []         |
+      |__________________|
+             |  |
+             |__|
+            ");
+
+            Console.ResetColor();
+
+            Console.Write("Please enter your name: ");
+            UserName = Console.ReadLine();
+
+            while (string.IsNullOrWhiteSpace(UserName))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Please enter a valid name.");
+                Console.ResetColor();
+
+                Console.Write("Name: ");
+                UserName = Console.ReadLine();
+            }
+
+            UserName = UserName.Trim();
+
+            CybersecurityTip = "Think before you click.";
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"\nHello, {UserName}!");
+            Console.WriteLine("Welcome to the Cybersecurity Awareness Bot.");
+            Console.ResetColor();
+
+            Console.WriteLine($"\nTip of the day: {CybersecurityTip}");
+
+            Console.WriteLine("\nI can help you learn about:");
+            Console.WriteLine("- Password safety");
+            Console.WriteLine("- Phishing");
+            Console.WriteLine("- Safe browsing");
+
+            StartConversation();
+        }
+
+        private void StartConversation()
+        {
+            while (true)
+            {
+                ShowMenu();
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("\nYou: ");
+                Console.ResetColor();
+
+                string userInput = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(userInput))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Bot: Please type something so I can help you.");
+                    Console.ResetColor();
+                    continue;
+                }
+
+                string input = userInput.ToLower().Trim();
+
+                if (input == "exit" || input == "quit")
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"Bot: Goodbye, {UserName}! Stay safe online.");
+                    Console.ResetColor();
+                    break;
+                }
+
+                if (input.Contains("how are you"))
+                {
+                    Console.WriteLine("Bot: I'm doing well, thanks for asking!");
+                    Console.WriteLine("Bot: I'm ready to help you with cybersecurity.");
+                }
+                else if (input.Contains("purpose"))
+                {
+                    Console.WriteLine("Bot: My purpose is to teach users about basic cybersecurity.");
+                }
+                else if (input.Contains("what can") || input.Contains("help"))
+                {
+                    Console.WriteLine("Bot: You can ask me about passwords, phishing or safe browsing.");
+                }
+                else if (input.Contains("password"))
+                {
+                    ShowPasswordAdvice();
+                }
+                else if (input.Contains("phishing"))
+                {
+                    ShowPhishingAdvice();
+                }
+                else if (input.Contains("browse") || input.Contains("internet"))
+                {
+                    ShowBrowsingAdvice();
+                }
+                else
+                {
+                    Console.WriteLine("Bot: I'm not sure about that.");
+                    Console.WriteLine("Bot: Try asking me about passwords, phishing or safe browsing.");
+                }
+            }
+        }
+
+        private void ShowMenu()
+        {
+            Console.WriteLine("\n========== MENU ==========");
+            Console.WriteLine("Ask me about passwords, phishing or safe browsing.");
+            Console.WriteLine("Type 'exit' to leave.");
+            Console.WriteLine("==========================");
+        }
+
+        private void ShowPasswordAdvice()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
+            Console.WriteLine("\nBot: Password safety is very important.");
+            Console.WriteLine("Bot: Use a strong and unique password for each account.");
+            Console.WriteLine("Bot: Avoid using information such as your name or birthday.");
+            Console.WriteLine("Bot: Never share your passwords with other people.");
+
+            Console.ResetColor();
+        }
+
+        private void ShowPhishingAdvice()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
+            Console.WriteLine("\nBot: Phishing is a common cybersecurity threat.");
+            Console.WriteLine("Bot: It happens when someone tries to trick you into giving");
+            Console.WriteLine("Bot: away personal information or clicking a harmful link.");
+            Console.WriteLine("Bot: Be careful with unexpected emails, messages and links.");
+
+            Console.ResetColor();
+        }
+
+        private void ShowBrowsingAdvice()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
+            Console.WriteLine("\nBot: For safer browsing, avoid suspicious websites.");
+            Console.WriteLine("Bot: Check website addresses before entering information.");
+            Console.WriteLine("Bot: Keep your browser and computer updated.");
+            Console.WriteLine("Bot: Do not download files from websites you do not trust.");
+
+            Console.ResetColor();
+        }
+    }
+}
+=======================================
+     CYBERSECURITY AWARENESS BOT
+=======================================
+
+Please enter your name: Bheki
+
+Hello, Bheki!
+Welcome to the Cybersecurity Awareness Bot.
+
+Tip of the day: Think before you click.
+
+You: Tell me about passwords
+
+Bot: Password safety is very important.
+Bot: Use a strong and unique password for each account.
