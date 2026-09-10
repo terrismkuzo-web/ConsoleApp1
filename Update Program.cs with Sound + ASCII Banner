@@ -1,0 +1,121 @@
+using System;
+using System.IO;
+using System.Media;
+
+class Program
+{
+    static void PlayGreeting()
+    {
+        try
+        {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "greeting.wav");
+            if (File.Exists(path))
+            {
+                SoundPlayer player = new SoundPlayer(path);
+                player.Play(); // Play() is async. Use PlaySync() if you want to wait
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Could not play greeting: {ex.Message}");
+            Console.ResetColor();
+        }
+    }
+
+    static void PrintAsciiArt()
+    {
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine(@"
+  _______  _                            _   _             
+ |__   __|| |                          | (_)            
+    | |   | |__   _   _  _ __   ___  __| |  _  _ __   ___ 
+    |   | '_ \ | | | || '_ \ / __|/ _` | || '_ \ / __|
+    |   | || |_| || | |\__ \ (_| | | || | | |\__ \
+    |_|   |_| |_| \__, ||_| |_||___/\__,_| |_||_| |_||___/
+                   __/ |                                  
+                  |___/  CYBERSECURITY AWARENESS BOT
+");
+        Console.ResetColor();
+    }
+
+    static void Main()
+    {
+        Console.Title = "Cybersecurity Awareness Bot";
+        Console.Clear();
+
+        // Multimedia requirements
+        PrintAsciiArt();
+        PlayGreeting();
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("System initializing...");
+        Console.ResetColor();
+        Console.WriteLine();
+
+        // Ask the user for their name
+        Console.Write("Please enter your name: ");
+        string userName = Console.ReadLine();
+
+        // Input validation
+        while (string.IsNullOrWhiteSpace(userName))
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Name cannot be empty. Please try again.");
+            Console.ResetColor();
+
+            Console.Write("Please enter your name: ");
+            userName = Console.ReadLine();
+        }
+
+        // Create the chatbot object
+        ChatBot bot = new ChatBot(userName);
+
+        // Display the welcome message
+        bot.ShowWelcome();
+
+        Console.ForegroundColor = ConsoleColor.DarkGray;
+        Console.WriteLine("You can ask me about:");
+        Console.WriteLine("  [1] Password safety");
+        Console.WriteLine("  [2] Phishing");
+        Console.WriteLine("  [3] Safe browsing");
+        Console.WriteLine("  [4] My purpose");
+        Console.WriteLine("  [5] How I am doing");
+        Console.WriteLine("  [0] Exit");
+        Console.ResetColor();
+        Console.WriteLine();
+
+        // Chat loop
+        while (true)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write($"{userName}: ");
+            Console.ResetColor();
+
+            string question = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(question))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Please enter a question.");
+                Console.ResetColor();
+                continue;
+            }
+
+            if (question.ToLower().Trim() == "exit" || question.Trim() == "0")
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine($"Goodbye {userName}! Stay safe online.");
+                Console.ResetColor();
+                break;
+            }
+
+            string response = bot.GetResponse(question);
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Bot: {response}");
+            Console.ResetColor();
+            Console.WriteLine();
+        }
+    }
+}
