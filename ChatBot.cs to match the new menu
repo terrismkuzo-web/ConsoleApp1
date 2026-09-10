@@ -1,0 +1,13 @@
+public void ShowWelcome()
+{
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    Console.WriteLine("==============================================");
+    Console.WriteLine($"       WELCOME {UserName.ToUpper()}");
+    Console.WriteLine("==============================================");
+    Console.ResetColor();
+
+    Console.WriteLine();
+    Console.WriteLine($"Hello {UserName}! Welcome to the Cybersecurity Awareness Bot.");
+    Console.WriteLine("I am here to help you stay safe online.");
+    Console.WriteLine();
+}
