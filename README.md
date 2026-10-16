@@ -268,6 +268,144 @@ Used in ChatbotEngine.cs - responseHandler = ProcessInput;
 
 ## Technologies
 C#.NET 8.0 WPF, System.Media.SoundPlayer
+ 
+## 1. Project Overview
+
+The Cybersecurity Awareness Chatbot is a C# application designed to educate users about cybersecurity and help them understand how to stay safe when using computers, mobile devices and the internet.
+
+In Part 1, I developed a console-based chatbot that provided basic cybersecurity information. In Part 2, the project is extended by introducing a graphical user interface (GUI) using Windows Forms (WinForms). The aim is to make the chatbot easier to use and improve the way it interacts with users.
+
+## 2. Project Objectives
+
+The main objectives of this project are to:
+
+- Develop a user-friendly graphical interface.
+- Provide information about common cybersecurity threats.
+- Recognise keywords in user messages.
+- Generate relevant and varied chatbot responses.
+- Remember selected information shared during a conversation.
+- Detect basic sentiment in user messages.
+- Support follow-up questions and maintain conversation flow.
+- Apply C# programming concepts such as classes, methods, collections and delegates.
+- Handle unexpected input without crashing the application.
+
+## 3. Technologies Used
+
+The following technologies and tools are used in the project:
+
+- **Programming language:** C#
+- **Framework:** .NET for Windows Forms
+- **User interface:** Windows Forms (WinForms)
+- **Development environment:** Visual Studio
+- **Version control:** Git and GitHub
+- **Voice functionality:** C# speech functionality, where implemented
+
+## 4. Application Features
+
+### 4.1 Graphical User Interface
+
+The application uses a graphical interface to allow users to communicate with the chatbot. The interface is designed to display messages clearly and provide an input area and Send button for submitting questions.
+
+### 4.2 Keyword Recognition
+
+The chatbot checks user messages for keywords related to cybersecurity topics, such as phishing, passwords, malware, scams and online safety. It uses these keywords to identify the topic and provide a relevant response.
+
+### 4.3 Random Responses
+
+The chatbot can use collections of predefined responses to provide different answers to similar questions. This helps make conversations less repetitive.
+
+### 4.4 Memory
+
+The memory feature allows the chatbot to retain selected information shared by the user during the conversation. This information can be used to personalise later responses.
+
+### 4.5 Sentiment Detection
+
+The chatbot checks for basic words or phrases that may indicate a user's mood or feelings. It can adjust its response to provide a more suitable and supportive interaction.
+
+### 4.6 Conversation Flow
+
+The chatbot supports follow-up messages and uses the conversation context where implemented. This helps users continue a discussion without having to repeat the entire question.
+
+### 4.7 Error Handling
+
+The application handles unexpected or unrecognised messages by providing an appropriate response. This helps prevent the chatbot from failing when it receives input it does not understand.
+
+### 4.8 Object-Oriented Programming
+
+The project uses C# programming concepts such as classes and methods to organise the code. Collections and delegates are also used where required to manage information and support application functionality.
+
+## 5. Installation and Setup
+
+To run the project on a Windows computer:
+
+1. Install Visual Studio with the appropriate .NET desktop development workload.
+2. Clone or download the project from the GitHub repository.
+3. Open the solution file (`.sln`) in Visual Studio.
+4. Allow Visual Studio to restore any required dependencies.
+5. Build the solution and check for compilation errors.
+6. Run the application using the Start button or the `F5` keyboard shortcut.
+
+The application requires a compatible Windows environment and the appropriate .NET runtime or development tools.
+
+## 6. How to Use the Application
+
+1. Launch the Cybersecurity Awareness Chatbot.
+2. Read the welcome message displayed on the interface.
+3. Type a cybersecurity-related question into the message input area.
+4. Click the Send button to submit the message.
+5. Read the chatbot's response in the conversation area.
+6. Continue the conversation by asking another question or using a supported follow-up message.
+7. Close the application when finished.
+
+## 7. Example Questions
+
+Users can try questions such as:
+
+- What is phishing?
+- How can I create a strong password?
+- How do I recognise an online scam?
+- What is malware?
+- How can I protect my personal information online?
+- What should I do if I receive a suspicious email?
+
+The responses depend on the keywords and conversation features implemented in the application.
+
+## 8. Testing
+
+The application should be tested using different types of input to check that its features work correctly.
+
+| Test | Expected result |
+|---|---|
+| Enter a cybersecurity question | The chatbot provides a relevant response. |
+| Enter an unknown question | The chatbot displays a suitable fallback response. |
+| Enter an empty message | The application prevents or handles the empty input. |
+| Ask repeated questions | The chatbot responds according to its response logic. |
+| Share information for memory | The chatbot retains the supported information during the conversation. |
+| Enter messages with different sentiments | The chatbot responds according to its sentiment rules. |
+| Use follow-up messages | The chatbot handles supported follow-up requests. |
+
+Testing results should be updated after each test has been performed.
+
+## 9. GitHub Repository and Version Control
+
+GitHub is used to store the project source code and track changes throughout development. Meaningful commits help show the progress made while implementing the Part 2 requirements.
+
+The repository should include the C# source files, project files, README documentation and any other required resources. Releases should be created according to the assignment instructions.
+
+**Repository link:** [Insert your GitHub repository URL here]
+
+## 10. Conclusion
+
+Part 2 extends the original Cybersecurity Awareness Chatbot by introducing a graphical interface and additional interaction features. The project provides an opportunity to apply C# programming concepts to a practical application while helping users learn about cybersecurity.
+
+Developing this application also improves my understanding of graphical user interfaces, object-oriented programming, collections, delegates, user input handling and software testing.
+
+## 11. Author
+
+**Name:** Bhekithemba Mkuzo 
+**Module:** Programming 2A  
+**Project:** Cybersecurity Awareness Chatbot – Part 2  
+**Programming language:** C#
 https://youtu.be/xxxxxx or https://www.youtube.com/watch?v=xxxxxx
 ## Video Presentation
 YouTube Unlisted Link: https://youtu.be/YOUR_VIDEO_ID_HERE
