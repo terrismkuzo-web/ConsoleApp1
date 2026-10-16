@@ -1,0 +1,49 @@
+<Window x:Class="CyberAwarenessChatbotGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CyberAwareness Chatbot - PROG6221" Height="650" Width="900"
+        Background="#1E1E2E" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header with ASCII Art Image -->
+        <Border Grid.Row="0" Background="#313244" CornerRadius="10" Padding="10" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="LogoImage" Width="60" Height="60" Source="Assets/ascii_logo.png" Margin="0,0,15,0"/>
+                <StackPanel>
+                    <TextBlock Text="CYBER AWARENESS CHATBOT" Foreground="#89B4FA" FontSize="18" FontWeight="Bold"/>
+                    <TextBlock Text="Stay safe online - Ask me about password, scam, privacy, phishing" Foreground="#CDD6F4" FontSize="12"/>
+                </StackPanel>
+                <TextBlock x:Name="MemoryLabel" Foreground="#A6E3A1" Margin="30,0,0,0" VerticalAlignment="Center" FontStyle="Italic"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Chat Display -->
+        <Border Grid.Row="1" Background="#181825" CornerRadius="10" Padding="10">
+            <ScrollViewer x:Name="ChatScrollViewer" VerticalScrollBarVisibility="Auto">
+                <TextBox x:Name="ChatHistoryBox" IsReadOnly="True" TextWrapping="Wrap"
+                         Background="Transparent" BorderThickness="0" Foreground="#CDD6F4"
+                         FontFamily="Consolas" FontSize="14" AcceptsReturn="True"/>
+            </ScrollViewer>
+        </Border>
+
+        <!-- Input Area -->
+        <Grid Grid.Row="2" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="UserInputBox" Grid.Column="0" Height="45" FontSize="14"
+                     Background="#313244" Foreground="White" BorderBrush="#89B4FA"
+                     Padding="10" VerticalContentAlignment="Center" KeyDown="UserInputBox_KeyDown"
+                     />
+            <Button x:Name="SendButton" Grid.Column="1" Content="SEND" Width="100" Height="45"
+                    Margin="10,0,0,0" Background="#89B4FA" Foreground="#1E1E2E"
+                    FontWeight="Bold" BorderThickness="0" Cursor="Hand" Click="SendButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>
