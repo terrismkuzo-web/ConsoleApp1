@@ -243,3 +243,29 @@ Overall, the project helped demonstrate how C# programming concepts can be combi
 C# Cybersecurity Awareness Bot Project
 https://github.com/terrismkuzo-web/ConsoleApp1.git
 https://youtu.be/2XBD6HKtQaw
+
+# Cyber Awareness Chatbot GUI - PROG6221 POE Part 2
+
+WPF Chatbot that promotes cybersecurity awareness with memory, sentiment, and delegate.
+
+## Features Implemented (Rubric)
+- Q1: WPF GUI, voice greeting (greeting.wav), ASCII art image (ascii_logo.png), neat colors
+- Q2: Keyword Recognition using Dictionary<string, List<string>> - password, scam, privacy, phishing, malware
+- Q3: Random Responses using List<string> + Random class
+- Q4: Conversation Flow - handles "another tip", "tell me more", "explain more"
+- Q5: Memory & Recall - stores name and favourite topic, personalizes responses
+- Q6: Sentiment Detection - worried, frustrated, curious + auto-shares tip (no re-input needed)
+- Q7: Error Handling - default response, try-catch for WAV
+- Q8: Optimisation - Dictionaries, Lists, Classes, Methods, Delegate
+
+## How to Run
+1. Place greeting.wav and ascii_logo.png in /Assets (Build Action: Content, Copy Always)
+2. Build and Run
+
+## Delegate Usage
+public delegate string ChatbotResponseDelegate(string userInput);
+Used in ChatbotEngine.cs - responseHandler = ProcessInput;
+
+## Technologies
+C#.NET 8.0 WPF, System.Media.SoundPlayer
+
