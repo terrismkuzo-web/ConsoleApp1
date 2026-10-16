@@ -1,0 +1,28 @@
+git init
+git add.
+git commit -m "Initial commit - WPF project setup with MainWindow"
+
+git add Chatbot/ResponseManager.cs
+git commit -m "Added keyword recognition with Dictionary and List for 5 topics"
+
+git add Chatbot/MemoryManager.cs Chatbot/SentimentDetector.cs
+git commit -m "Implemented memory recall and sentiment detection classes"
+
+git add Chatbot/ChatbotEngine.cs
+git commit -m "Integrated delegate pattern and conversation flow logic"
+
+git add Assets/
+git commit -m "Added WAV greeting and ASCII logo image assets"
+
+git add README.md
+git commit -m "Added README and final code optimisation with error handling"
+
+# Push
+git branch -M main
+git remote add origin YOUR_GITHUB_LINK
+git push -u origin main
+
+# 2 Releases
+# Go to GitHub > Releases > Draft new release
+# Tag: v1.0.0 - Title: Part 2 Initial GUI Release
+# Tag: v2.0.0 - Title: Part 2 Final with Sentiment & Memory
